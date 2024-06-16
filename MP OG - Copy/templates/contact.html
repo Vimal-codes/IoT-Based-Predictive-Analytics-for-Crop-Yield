@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Form</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='CSS/contact.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='CSS/menu.css') }}">
+</head>
+<body>
+<nav class="menu-bar">
+  <label class="logo">FamX</label>
+  <ul>
+    <li><a href="{{ url_for('home') }}">Home</a></li>
+    <li><a href="{{ url_for('main') }}">Live Data</a></li>
+    <li><a href="{{ url_for('predict') }}">Model</a></li>
+    <li><a href="{{ url_for('contact') }}">Contact</a></li>
+  </ul>
+  <img src="{{ url_for('static', filename='icon/user.png') }}" class="user-icon" onclick="toggleMenu()">
+  <div class="sub-menu-wrap" id="subMenu">
+    <div class="sub-menu">
+      <div class="user-info">
+        <h2>{{ name }}</h2>
+      </div>
+      <hr>
+      <a href="{{ url_for('aboutus') }}" class="sub-menu-link">
+        <img src="{{ url_for('static', filename='icon/help.png') }}">
+        <p>About Us</p>
+        <span>></span>
+      </a>
+      <a href="{{ url_for('logout') }}" class="sub-menu-link">
+        <img src="{{ url_for('static', filename='icon/logout.png') }}">
+        <p>Log Out</p>
+        <span>></span>
+      </a>
+    </div>
+  </div>
+</nav>
+  <div class="contact-container">
+    <form action="https://api.web3forms.com/submit" method="POST" class="contact-left">
+      <div class="contact-left-title">
+        <h2>Get in touch</h2>
+        <hr>
+      </div>
+      <input type="hidden" name="access_key" value="0326b655-c78b-4f4c-9ac5-4cb39cd76164">
+      <input type="text" name="name" class="contact-inputs" placeholder="Your Name" required>
+      <input type="text" name="email" class="contact-inputs" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" class="contact-inputs" required></textarea>
+      <button type="submit">Submit<img src="{{ url_for('static', filename='icon/assets/arrow_icon.png') }}"></button>
+    </form>
+    <div class="contact-right">
+      <img src="{{ url_for('static', filename='icon/assets/right_img.png') }}">
+    </div>
+  </div>
+  <script>
+    function toggleMenu() {
+      const subMenu = document.getElementById('subMenu');
+      subMenu.classList.toggle('open-menu');
+    }
+  </script>
+  <script src="{{ url_for('static', filename='js/gauge.js') }}"></script>
+</body>
+</html>

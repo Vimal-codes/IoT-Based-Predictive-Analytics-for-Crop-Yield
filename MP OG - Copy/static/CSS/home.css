@@ -1,0 +1,49 @@
+.home {
+    min-height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url(../images/home1.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    z-index: 0; /* Ensure home is below nav and sub-menu */
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding-top: 200px;
+}
+
+.home .content {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: #fff;
+}
+
+.home .content h1 {
+    font-size: 3.5rem;
+    padding: 0 1rem;
+    text-shadow: 0 .3rem .5rem rgba(0, 0, 0, .3);
+    text-transform: uppercase;
+    margin-bottom: 1rem; /* Reduce this value to decrease space */
+}
+
+.home .content p {
+    font-size: 1.5rem;
+    color: #eee;
+    margin-top: 0; /* Remove top margin to reduce space */
+}
+
+.home .content button {
+    height: 2.5rem;
+    width: 15rem;
+    border-radius: 5rem;
+    background: rgba(0, 0, 0, 0.1); /* RGBA format: pink color with 80% opacity */
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.home .content button:hover {
+    background: rgba(0, 0, 0, 0.5); /* RGBA format: pink color with 100% opacity */
+}

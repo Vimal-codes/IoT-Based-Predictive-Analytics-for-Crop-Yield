@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Crop Yield Prediction</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='CSS/menu.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='CSS/prediction.css') }}">
+</head>
+<body>
+  <nav class="menu-bar">
+    <label class="logo">FamX</label>
+    <ul>
+      <li><a href="{{ url_for('home') }}">Home</a></li>
+      <li><a href="{{ url_for('main') }}">Live Data</a></li>
+      <li><a href="{{ url_for('predict') }}">Model</a></li>
+      <li><a href="{{ url_for('contact') }}">Contact</a></li>
+    </ul>
+    <img src="{{ url_for('static', filename='icon/user.png') }}" class="user-icon" onclick="toggleMenu()">
+    <div class="sub-menu-wrap" id="subMenu">
+      <div class="sub-menu">
+        <div class="user-info">
+          <h2>{{ name }}</h2>
+        </div>
+        <hr>
+        <a href="{{ url_for('aboutus') }}" class="sub-menu-link">
+          <img src="{{ url_for('static', filename='icon/help.png') }}">
+          <p>About Us</p>
+          <span>></span>
+        </a>
+        <a href="{{ url_for('logout') }}" class="sub-menu-link">
+          <img src="{{ url_for('static', filename='icon/logout.png') }}">
+          <p>Log Out</p>
+          <span>></span>
+        </a>
+      </div>
+    </div>
+  </nav>
+  <h1 class="heading">Crop Yield Prediction</h1>
+  <div class="registration-form">
+    <form action="{{ url_for('predict') }}" method="post">
+      <p>pH</p>
+      <input type="number" name="pH" step="any" required value="{{ ph if ph else '' }}">
+      <p>Annual Rainfall</p>
+      <input type="number" name="rainfall" step="any" required value="{{ rainfall if rainfall else '' }}">
+      <p>Temperature</p>
+      <input type="number" name="temperature" step="any" required value="{{ temperature if temperature else '' }}">
+      <p>Area in Hectares</p>
+      <input type="number" name="Area_in_hectares" step="any" required value="{{ area_in_hectares if area_in_hectares else '' }}">
+      <button type="submit">Predict</button>
+    </form>
+    {% if prediction_message %}
+      <h1 class="prediction-message">{{ prediction_message }}</h1>
+    {% endif %}
+  </div>
+  <script>
+    function toggleMenu() {
+      const subMenu = document.getElementById('subMenu');
+      subMenu.classList.toggle('open-menu');
+    }
+  </script>
+  <script src="{{ url_for('static', filename='js/gauge.js') }}"></script>
+</body>
+</html>

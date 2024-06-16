@@ -1,0 +1,180 @@
+/* aboutus.css */
+
+body {
+    background-color: #f1f1f1;
+}
+
+.aboutus-section {
+    background: url(../images/aboutsus.jpg) no-repeat left;
+    background-size: 55%;
+    background-color: #eceaff;
+    overflow: hidden;
+    padding: 100px 0;
+    display: flex;
+    justify-content: flex-end; /* Align the inner container to the right */
+}
+
+.aboutus-inner-container {
+    width: 55%;
+    background-color: #fdfdfd;
+    padding: 150px;
+    box-sizing: border-box;
+}
+
+.aboutus-inner-container h1 {
+    margin-bottom: 30px;
+    font-size: 30px;
+    font-weight: 900;
+}
+
+.aboutus-text {
+    font-size: 16px;
+    color: #545454;
+    line-height: 30px;
+    text-align: justify;
+    margin-bottom: 40px;
+}
+
+.aboutus-skills {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.menu-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #009578;
+  padding: 10px 20px;
+  position: relative;
+  z-index: 10;
+}
+
+.menu-bar .logo {
+  color: white;
+  font-size: 35px;
+  line-height: 80px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+}
+
+.user-icon {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.menu-bar ul {
+  width: 100%;
+  text-align: right;
+}
+
+.menu-bar ul li {
+  display: inline-block;
+  margin: 10px 15px;
+}
+
+.menu-bar ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.sub-menu-wrap {
+  position: absolute;
+  top: 100%;
+  right: 5%;
+  width: 320px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s;
+  z-index: 20;
+}
+
+.sub-menu-wrap.open-menu {
+  max-height: 400px;
+}
+
+.sub-menu {
+  background: #fff;
+  padding: 20px;
+  margin: 10px 0;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+}
+
+.user-info h3 {
+  font-weight: 500;
+}
+
+.sub-menu hr {
+  border: none;
+  height: 1px;
+  width: 100%;
+  background: #ccc;
+  margin: 15px 0 10px;
+}
+
+.sub-menu-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #525252;
+  margin: 12px 0;
+}
+
+.sub-menu-link p {
+  width: 100%;
+}
+
+.sub-menu-link img {
+  width: 40px;
+  background: #e5e5e5;
+  border-radius: 50%;
+  padding: 8px;
+  margin-right: 15px;
+}
+
+.sub-menu-link span {
+  font-size: 22px;
+  transition: transform 0.5s;
+}
+
+.sub-menu-link:hover span {
+  transform: translateX(5px);
+}
+
+.sub-menu-link:hover p {
+  font-weight: 600;
+}
+
+@media screen and (max-width:1200px){
+    .aboutus-inner-container{
+      padding: 80px;
+    }
+}
+
+@media screen and (max-width:1200px){
+    .aboutus-section{
+        background-size: 100%;
+        padding: 100px 40px;
+    }
+
+    .aboutus-inner-container{
+      width: 100%;
+    }
+}
+
+@media screen and (max-width:600px){
+    .aboutus-section{
+        padding: 0;
+    }
+
+    .aboutus-inner-container{
+      padding: 60px;
+    }
+}

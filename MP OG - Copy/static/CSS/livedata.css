@@ -1,0 +1,42 @@
+/* Apply specific class to avoid style clashes */
+.livedata-body {
+    background: linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .6)), url(../images/live.jpg) no-repeat;
+    background-size: cover;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.livedata-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding-top: 250px; /* Adjust to match the height of the fixed nav */
+}
+
+.livedata-data-box {
+    background-color: #eceaff;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.livedata-data-box h2 {
+    margin: 0 0 10px;
+}
+
+.livedata-data-box p {
+    font-size: 24px;
+    margin: 0;
+}
+
+.livedata-date-time {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 18px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}

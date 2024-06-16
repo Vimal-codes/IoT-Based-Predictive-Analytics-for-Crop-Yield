@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About Us</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/menu.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/aboutus.css') }}">
+</head>
+<body>
+  <nav class="menu-bar">
+    <label class="logo">FamX</label>
+    <ul>
+      <li><a href="{{ url_for('home') }}">Home</a></li>
+      <li><a href="{{ url_for('main') }}">Live Data</a></li>
+      <li><a href="{{ url_for('predict') }}">Model</a></li>
+      <li><a href="{{ url_for('contact') }}">Contact</a></li>
+    </ul>
+    <img src="{{ url_for('static', filename='icon/user.png') }}" class="user-icon" onclick="toggleMenu()">
+    <div class="sub-menu-wrap" id="subMenu">
+      <div class="sub-menu">
+        <div class="user-info">
+          <h2>{{ name }}</h2>
+        </div>
+        <hr>
+        <a href="{{ url_for('aboutus') }}" class="sub-menu-link">
+          <img src="{{ url_for('static', filename='icon/help.png') }}">
+          <p>About Us</p>
+          <span>></span>
+        </a>
+        <a href="{{ url_for('logout') }}" class="sub-menu-link">
+          <img src="{{ url_for('static', filename='icon/logout.png') }}">
+          <p>Log Out</p>
+          <span>></span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="aboutus-section">
+    <div class="aboutus-inner-container">
+      <h1>About Us</h1>
+      <p class="aboutus-text">
+        Welcome to FarmX, your reliable partner in agricultural success. At FarmX, we empower farmers with advanced predictive analytics to optimize crop yields. Using cutting-edge IoT technology and data-driven insights, we provide precise recommendations tailored to your specific farming needs. Our mission is to help you make informed decisions, enhance productivity, and ensure sustainable farming practices. Join us at FarmX and discover how innovation meets agriculture.
+      </p>
+      <div class="aboutus-skills">
+        <span>Machine learning</span>
+        <span>IoT</span>
+        <span>Web Design</span>
+      </div>
+    </div>
+  </div>
+<script>
+    function toggleMenu() {
+      const subMenu = document.getElementById('subMenu');
+      subMenu.classList.toggle('open-menu');
+    }
+</script>
+<script src="{{ url_for('static', filename='js/gauge.js') }}"></script>
+</body>
+</html>

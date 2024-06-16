@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='CSS/menu.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='CSS/home.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="hero">
+        <nav class="menu-bar">
+            <label class="logo">FamX</label>
+            <ul class="menuList">
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('main') }}">Live Data</a></li>
+                <li><a href="{{ url_for('predict') }}">Model</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact</a></li>
+            </ul>
+            <img src="{{ url_for('static', filename='icon/user.png') }}" class="user-icon" onclick="toggleMenu()">
+            <div class="sub-menu-wrap" id="subMenu">
+                <div class="sub-menu">
+                    <div class="user-info">
+                        <h2>{{ name }}</h2>
+                    </div>
+                    <hr>
+                    <a href="{{ url_for('aboutus') }}" class="sub-menu-link">
+                        <img src="{{ url_for('static', filename='icon/help.png') }}">
+                        <p>About Us</p>
+                        <span>></span>
+                    </a>
+                    <a href="{{ url_for('logout') }}" class="sub-menu-link">
+                        <img src="{{ url_for('static', filename='icon/logout.png') }}">
+                        <p>Log Out</p>
+                        <span>></span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+        <section class="home" id="home">
+            <div class="content">
+                <h1>WELCOME TO FamX</h1>
+                <p>FarmX: Your Trusted Destination Where Farmers Discover Innovative Solutions and Predict Crop Yields with Precision</p>
+                <a href="{{ url_for('predict') }}"><button>Predict</button></a>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            let subMenu = document.getElementById("subMenu");
+            subMenu.classList.toggle("open-menu");
+        }
+    </script>
+
+    </script>
+    <script src="https://kit.fontawesome.com/f8e1a90484.js" crossorigin="anonymous"></script>
+</body>
+</html>
