@@ -10,4 +10,4 @@ techniques, to boost productivity and optimize resource usage. The primary aim o
 agricultural systems is to improve field productivity, minimize resource consumption, and 
 enhance overall crop yield. Our project was initiated to explore the potential of machine 
 learning and IoT in predicting crop yields accurately, helping farmers make informed decisions 
-and improve their agricultural practices.
+and improve their agricultural practices .
