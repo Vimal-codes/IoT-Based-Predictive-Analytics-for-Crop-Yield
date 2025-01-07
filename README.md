@@ -11,3 +11,8 @@ agricultural systems is to improve field productivity, minimize resource consump
 enhance overall crop yield. Our project was initiated to explore the potential of machine 
 learning and IoT in predicting crop yields accurately, helping farmers make informed decisions 
 and improve their agricultural practices .
+
+• Developed the frontend and backend for live data visualization, including real-time updates using Socket IO.
+• Integrated IoT components (ESP32, DHT22, and rain sensor) for monitoring environmental parameters and storing data in an SQLite3 database.
+2024
+• Created and integrated a Random Forest Regression model for crop yield predictions based on user inputs and sensor data.
